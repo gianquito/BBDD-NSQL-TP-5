@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+    db-mongo:
+        container_name: mongo_db_node
+        image: mongo:latest
+        ports:
+            - '27017:27017'
+            
+    web-api:
+        container_name: api_node_mongo
+        build: .
+        ports:
+            - '8080:8080'
+        volumes:
+            - ./api:/api
+        command: sh -c "npm install && node index.js"
+        depends_on:
+            - db-mongo
+    next-app:
+        container_name: front_app
+        build:
+          context: ./api-front
+          dockerfile: prod.Dockerfile
+        restart: always
+        ports:
+          - 3000:3000
+        depends_on:
+            - web-api

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 56 68% 95%;
+        --foreground: 287 92% 5%;
+        --card: 56 68% 95%;
+        --card-foreground: 287 92% 5%;
+        --popover: 56 68% 95%;
+        --popover-foreground: 287 92% 5%;
+        --primary: 4 82% 52%;
+        --primary-foreground: 287 92% 5%;
+        --secondary: 210 81% 45%;
+        --secondary-foreground: 56 68% 95%;
+        --muted: 56 69% 20%;
+        --muted-foreground: 0 0 38%;
+        --accent: 177 95% 69%;
+        --accent-foreground: 287 92% 5%;
+        --destructive: 0 85% 60%;
+        --destructive-foreground: 287 92% 5%;
+        --border: 56 69% 20%;
+        --secondary20: 4, 82%, 52%, 5%;
+        --input: 56 69% 20%;
+        --ring: 177 95% 40%;
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 56 68% 5%;
+        --foreground: 287 92% 95%;
+        --card: 56 68% 5%;
+        --card-foreground: 287 92% 95%;
+        --popover: 56 68% 5%;
+        --popover-foreground: 287 92% 95%;
+        --primary: 4 82% 48%;
+        --primary-foreground: 56 68% 5%;
+        --secondary: 210 81% 55%;
+        --secondary-foreground: 56 68% 5%;
+        --muted: 56 69% 80%;
+        --muted-foreground: 287 92% 95%;
+        --accent: 177 95% 31%;
+        --accent-foreground: 56 68% 5%;
+        --destructive: 0 62% 30%;
+        --destructive-foreground: 287 92% 10%;
+        --border: 56 68% 60%;
+        --input: 56 69% 80%;
+        --ring: 177 95% 60%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
