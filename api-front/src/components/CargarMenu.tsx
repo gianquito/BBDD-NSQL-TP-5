@@ -31,6 +31,10 @@ export default function CargarMenu() {
     }
 
     function handleSubmit() {
+        if (!formData.nombre || !formData.añoDeAparicion || !formData.biografia || selectedImages.length == 0) {
+            toast.error('Formulario incompleto!')
+            return
+        }
         fetch('http://localhost:8080/cargarSuperheroe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

@@ -36,7 +36,6 @@ export default function EliminarMenu({ id, nombre }: { id: string; nombre: strin
                     },
                 })
             })
-            .catch(() => {})
     }
 
     // useEffect(() => {

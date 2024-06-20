@@ -31,6 +31,10 @@ export default function ModificarMenu({ id }: { id: string }) {
     }
 
     function handleSubmit() {
+        if (!formData.nombre || !formData.añoDeAparicion || !formData.biografia || selectedImages.length == 0) {
+            toast.error('Formulario incompleto!')
+            return
+        }
         fetch('http://localhost:8080/modificarSuperheroe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
